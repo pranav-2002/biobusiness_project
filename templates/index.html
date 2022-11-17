@@ -1,0 +1,51 @@
+{% extends "import.html" %} {% block content %}
+
+<center>
+  <br />
+  <div class="d-flex justify-content-center align-items-center">
+    <h2 style="width: 30%" class="mr-5">
+      Brain Tumor Detection Using Deep Learning
+    </h2>
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJGXcd-vhs4nHEVPsAeSMHttZ3FTLpqUqdbg&usqp=CAU"
+      alt="hero-image"
+    />
+  </div>
+
+  <br />
+
+  <h4 class="mb-4">Please Upload the MRI below</h4>
+
+  <form id="upload-file" method="post" enctype="multipart/form-data">
+    <input
+      type="file"
+      name="file"
+      class="btn btn-success"
+      id="imageUpload"
+      accept=".png, .jpg, .jpeg"
+    />
+  </form>
+
+  <div class="image-section" style="display: none">
+    <img
+      id="imagePreview"
+      alt="mri"
+      class="img-responsive"
+      src="#"
+      style="width: 300px; height: 300px"
+    /><br /><br />
+    <div>
+      <button type="button" class="btn btn-info btn-lg" id="btn-predict">
+        Predict
+      </button>
+    </div>
+  </div>
+
+  <div class="loader" style="display: none"></div>
+
+  <h3 id="result">
+    <span> </span>
+  </h3>
+</center>
+<br /><br />
+{% endblock %}
